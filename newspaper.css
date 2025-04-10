@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  width: 90%;
+  margin: 1% auto;
+  background-color: white;
+  max-width: 1300px;
+  padding: 1rem;
+}
+
+.news-link {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 20%;
+  padding: 2px;
+  margin-left: 30px;
+}
+.news-link p {
+  font-size: 90%;
+  margin-left: 0px;
+  text-align: center;
+}
+.news-link p a {
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  font-size: 500%;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  border-top: 1px solid black;
+}
+header h1 span {
+  color: rgba(77, 228, 255);
+  font-family: Georgia, serif;
+  font-weight: 900;
+}
+.ad {
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  background-color: black;
+  color: white;
+  width: 85%;
+  margin: auto;
+}
+
+.image-1,
+.image-2 {
+  height: 100%;
+  margin-bottom: -1px;
+  /*filter: grayscale(1.0);*/
+}
+.sumber-1 .image-1 p,
+.sumber .image-2 p {
+  font-size: x-small;
+  line-height: 1rem;
+}
+
+.date {
+  float: left;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.edition {
+  float: right;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.hr2 {
+  margin-top: 40px;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid black;
+  padding: 0;
+}
+.isi {
+  display: flex;
+  line-height: 2rem;
+}
+
+p {
+  text-align: justify;
+  position: relative;
+}
+
+.kiri {
+  width: 25%;
+  font-size: small;
+}
+.kanan {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  width: 80%;
+}
+.kananIsi {
+  padding-bottom: 10px;
+  display: flex;
+}
+img.kananIsiGambar {
+  width: 4.5rem;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.kananIsiText {
+  display: flex;
+  flex-direction: column;
+  line-height: 13px;
+}
+
+.image-2 {
+  grid-area: image-1;
+  width: 300px;
+  background-size: cover;
+  float: left;
+  margin-right: 20px;
+  margin-left: 0px;
+  margin-top: 7px;
+}
+.image-1 {
+  grid-area: image-1;
+  max-width: 450px;
+  height: auto;
+  background-size: cover;
+  float: left;
+  margin-right: 20px;
+  margin-left: 0px;
+  margin-top: 7px;
+}
+
+.hr3 {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid black;
+  padding: 0;
+}
+.page-no {
+  background-color: rgba(77, 228, 255);
+  color: white;
+  text-align: center;
+  width: 5%;
+  padding: 3px;
+  margin-left: 96%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sumber-1 p .tebal,
+.sumber p .tebal {
+  font-weight: bold;
+}
+.sumber .image-2 p span {
+  margin-top: 0px;
+  font-style: italic;
+}
+
+.sumber .image-2 p span a {
+  text-decoration: none;
+  color: black;
+}
+
+.sumber-1 .image-1 p span {
+  font-style: italic;
+}
+
+.isi .kanan .sumber-1 .image-1 p a,
+.isi .kanan .sumber .image-2 p a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  z-index: 999;
+}
+.isi .kanan .sumber-1 .image-1 p a {
+  /* top: -1.5rem; */
+  background-color: #ffffff94;
+  padding: 1%;
+}
+
+.tabel-1 {
+  margin: -1% 0% 1% 9%;
+  padding: 1%;
+  min-width: min-content;
+  border: 1px solid silver;
+  max-width: 75%;
+  width: fit-content;
+}
+.tabel-1a {
+  display: flex;
+  grid-gap: 1rem;
+  font-size: 10px;
+  line-height: 1.2rem;
+}
+
+@media (max-width: 710px) {
+  .image-1 {
+    max-width: 400px;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kananKecil {
+    display: none;
+  }
+  .tabel-1 {
+    display: none;
+  }
+  h1 {
+    font-size: 300%;
+  }
+}
+
+@media (max-width: 576px) {
+  .isi {
+    display: block;
+    /*margin-right: -80px;*/
+  }
+  .kiri {
+    width: 100%;
+    padding-right: 0px;
+    line-height: 1.2;
+    font-style: italic;
+  }
+  .kanan {
+    border-left: none;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+    margin-top: 1.5%;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    width: 100%;
+  }
+  h1 {
+    font-size: 169%;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    border-top: 1px solid black;
+  }
+  .news-link p {
+    font-size: 45%;
+    margin-left: -2px;
+    text-align: center;
+  }
+  .ad {
+    font-size: 8px;
+    /*margin-right: 10px;*/
+  }
+  .date {
+    font-size: 10px;
+  }
+  .edition {
+    font-size: 10px;
+  }
+  .image-2 {
+    width: 150px;
+  }
+  .image-1 {
+    max-width: 255px;
+    height: auto;
+    background-size: cover;
+  }
+  .header {
+    margin: 50%;
+  }
+  .hr3 {
+    display: block;
+    height: none;
+    border: none;
+    border-top: none;
+    padding: none;
+  }
+  .hr2 {
+    margin-top: 25px;
+  }
+  .page-no {
+    padding: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .tabel-1a {
+    display: block;
+    padding-left: 1rem;
+  }
+  /* .isi .kanan .sumber-1 .image-1 p a {
+    top: -3rem;
+  } */
+}
+@media (min-width: 1441px) {
+  html {
+    background-color: #0000000d;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox, IE and Edge */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
