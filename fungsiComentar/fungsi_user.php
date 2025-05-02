@@ -1,13 +1,13 @@
 <?php
 function user()
 {
-	$Penulis = query("SELECT * FROM portfolio1");
+	$Penulis = query("SELECT * FROM user");
     return $Penulis;
 }
 
 function user2($idUser)
 {
-	$penulis = query("SELECT penulis FROM portfolio1 WHERE id = $idUser")[0] ["penulis"];
+	$penulis = query("SELECT penulis FROM user WHERE id = $idUser")[0] ["penulis"];
     return $penulis;
 }
 
@@ -19,7 +19,7 @@ function registrasi($data) {
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
     // cek username sudah ada atau belum
-    $result = mysqli_query($conn, "SELECT username FROM portfolio1 WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
     if (mysqli_fetch_assoc($result) ) {
         echo " <script>
                 alert('username sudah terdaftar!');
@@ -37,12 +37,12 @@ function registrasi($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
     // var_dump($password); die;
     // tambahkan user baru ke database
-    mysqli_query ($conn, "INSERT INTO portfolio1 (username, password, penulis, email) VALUES('$username', '$password', '$penulis', '$email')");
+    mysqli_query ($conn, "INSERT INTO user (username, password, penulis, email) VALUES('$username', '$password', '$penulis', '$email')");
     mysqli_affected_rows($conn);
 }
 function hapus2($id2) {
     global $conn;
-    mysqli_query($conn, "DELETE FROM portfolio1 WHERE id = $id2");
+    mysqli_query($conn, "DELETE FROM user WHERE id = $id2");
     return mysqli_affected_rows($conn);
 }
 
@@ -50,7 +50,7 @@ function prosesLogin($username, $password) {
     global $conn; // Mengakses variabel global $conn
 
     // Menggunakan prepared statement untuk keamanan
-    $stmt = $conn->prepare("SELECT * FROM portfolio1 WHERE username = ?");
+    $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();

@@ -17,7 +17,7 @@ if ($idUser !== 1) {
     exit;
 }
 
-$portfolio = user();
+$user = user();
 ?>
 
 <!DOCTYPE html>
@@ -68,25 +68,25 @@ $portfolio = user();
             </tr>
         </thead>
         <tbody>
-        <?php foreach ( $portfolio as $prt) : ?>
+        <?php foreach ( $user as $usr) : ?>
             <tr>
                 <td>
                     <?php echo $i; ?>
                 </td>
                 <td>
-                    <a href="hapus.php?id2=<?php echo $prt["id"]; ?>" onclick="return confirm('yakin?')">hapus</a>
+                    <a href="hapus.php?id2=<?php echo $usr["id"]; ?>" onclick="return confirm('yakin?')">hapus</a>
                 </td>
                 <td>
-                    <?php echo $prt["penulis"]; ?>
+                    <?php echo $usr["penulis"]; ?>
                 </td>
                 <td>
-                    <?php echo $prt["email"]; ?>
+                    <?php echo $usr["email"]; ?>
                 </td>
                 <td>
-                    <?php echo $prt["username"]; ?>
+                    <?php echo $usr["username"]; ?>
                 </td>
                 <td class="perkecil">
-                    <?php echo $prt["password"]; ?>
+                    <?php echo $usr["password"]; ?>
                 </td>
             </tr>
         <?php $i++; ?>

@@ -3,31 +3,34 @@
 function tampilKomentarUrut()
 {
 	// Query untuk mengambil komentar untuk dashboard
-	$komentar = query("	SELECT
-							id, 
-							id_komen,  
+	$komentar = query("SELECT
+							k.id, 
+							k.id_komen,  
 								CASE
-									WHEN id_komen = 0 THEN id
-									ELSE id_komen  
+									WHEN k.id_komen = 0 THEN k.id
+									ELSE k.id_komen  
 								END AS id_full, 
-							judul, 
-							tanggal, 
-							nama,
-							COALESCE(
-								CASE
-									WHEN id_komen = 0 THEN isi 
-								END, '-') Komentar_Utama,
-							COALESCE(
-								CASE
-									WHEN id_komen != 0 THEN isi 
-								END, '-') Komentar_Balas
+							a.judul, 
+							k.tanggal, 
+							k.nama,
+								COALESCE(
+									CASE
+										WHEN k.id_komen = 0 THEN k.isi 
+									END, '-') Komentar_Utama,
+								COALESCE(
+									CASE
+										WHEN k.id_komen != 0 THEN k.isi 
+									END, '-') Komentar_Balas
 						FROM 
-							komentar 
+							komentar AS k
+						INNER JOIN
+							artikels AS a
+						ON k.artikel = a.id
 						ORDER BY 
-							judul, 
+							k.judul, 
 							id_full, 
-							id_komen, 
-							id;
+							k.id_komen, 
+							k.id;
 					");
 		// var_dump($komentar);
 

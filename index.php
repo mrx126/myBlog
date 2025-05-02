@@ -18,7 +18,7 @@ $artikels = detailArtikelFull();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css?v=40" />
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/006/984/425/non_2x/mrz-letter-logo-design-on-black-background-mrz-creative-initials-letter-logo-concept-mrz-letter-design-vector.jpg" type="image/png">
-    <title>MAbdillah Fakih</title>
+    <title>MAbdillah Faqih</title>
   </head>
   <body>
     <header>
@@ -30,7 +30,7 @@ $artikels = detailArtikelFull();
 
     <section class="home" id="home">
       <div class="home-text container">
-        <h2 class="home-title">MAbdillah Fakih</h2>
+        <h2 class="home-title">MAbdillah Faqih</h2>
         <span class="home-subtitle">Your source of great information</span>
       </div>
     </section>
